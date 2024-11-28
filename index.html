@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Support System</title>
+  <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
+  <link rel="manifest" href="/manifest.json">
+  <style>
+    /* Styling from your original HTML */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #eef2f7;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #4a90e2, #0055cc);
+      color: white;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow-x: hidden;
+    }
+
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .popup-content {
+      background: white;
+      color: #333;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      width: 90%;
+      text-align: left;
+      overflow-y: auto;
+      max-height: 80%;
+    }
+
+    .close-popup {
+      background: #0055cc;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Obafemi Awolowo University</h1>
+    <h2>Student Support System</h2>
+  </header>
+
+  <div class="container">
+    <!-- Welcome Popup -->
+    <div id="welcomePopup" class="popup">
+      <div class="popup-content">
+        <h3>Welcome to the Student Support System!</h3>
+        <p id="welcomeMessage"></p>
+        <p id="motivationalMessage"></p>
+        <button onclick="closeWelcomePopup()">Close</button>
+      </div>
+    </div>
+
+    <!-- Notes Popup -->
+    <div id="notePopup" class="popup">
+      <div class="popup-content">
+        <h3 id="noteTitle"></h3>
+        <div id="noteContent"></div>
+        <button class="close-popup" onclick="closeNotePopup()">Close</button>
+      </div>
+    </div>
+
+    <!-- Notes Section -->
+    <div id="notesSection">
+      <h3>Notes</h3>
+      <div id="categories">
+        <button onclick="showCategory('Personal')">Personal</button>
+        <button onclick="showCategory('Academic')">Academic</button>
+        <button onclick="showCategory('Miscellaneous')">Miscellaneous</button>
+        <button onclick="addCategory()">Add Category</button>
+      </div>
+      <div id="noteEditor"></div>
+      <input type="file" id="noteMedia" accept="image/*">
+      <button onclick="saveNote()">Save Note</button>
+    </div>
+    <ul id="notesList"></ul>
+  </div>
+
+  <script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
+  <script src="/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(() => console.log('Service Worker Registered'))
+        .catch((error) => console.error('Service Worker Registration Failed:', error));
+    }
+  </script>
+</body>
+</html>
