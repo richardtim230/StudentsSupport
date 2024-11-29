@@ -67,6 +67,241 @@
       border-radius: 5px;
       cursor: pointer;
     }
+    /* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #eef2f7, #dcecfb);
+  color: #333;
+}
+
+header {
+  background: linear-gradient(90deg, #4a90e2, #0055cc);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden;
+}
+
+/* Class Scheduler Section */
+#classScheduler {
+  margin-bottom: 30px;
+}
+
+#classScheduler h3 {
+  color: #0055cc;
+  margin-bottom: 10px;
+}
+
+#classScheduler button {
+  margin: 5px;
+  padding: 10px 15px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#classScheduler button:hover {
+  background: #0055cc;
+}
+
+#scheduleTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#scheduleTable th,
+#scheduleTable td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+#scheduleTable th {
+  background: #4a90e2;
+  color: white;
+}
+
+#scheduleTable td {
+  background: #f9f9f9;
+}
+
+#scheduleTable select,
+#scheduleTable input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+#scheduleTable button {
+  padding: 5px 10px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#scheduleTable button:hover {
+  background: #c0392b;
+}
+
+/* Notes Section */
+#notesSection h3 {
+  color: #0055cc;
+}
+
+#categories button {
+  margin: 5px;
+  padding: 10px 15px;
+  background: #7ed321;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#categories button:hover {
+  background: #5ba417;
+}
+
+#noteEditor {
+  margin: 10px 0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #f7faff;
+}
+
+#noteMedia {
+  margin: 10px 0;
+}
+
+#notesList {
+  margin: 10px 0;
+  list-style: none;
+  padding: 0;
+}
+
+#notesList li {
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #eaf3ff;
+  border-left: 5px solid #4a90e2;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#notesList li:hover {
+  background: #d8ebff;
+}
+
+/* Popup Styling */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background: white;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  text-align: left;
+  overflow-y: auto;
+  max-height: 80%;
+}
+
+.popup-content img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.close-popup {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.close-popup:hover {
+  background: #c0392b;
+}
+
+/* Weekly Calendar */
+#weeklyCalendar h3 {
+  color: #0055cc;
+  margin-bottom: 10px;
+}
+
+#calendar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#calendar .calendar-day {
+  padding: 10px;
+  background: #f7faff;
+  border-radius: 5px;
+  flex: 1;
+  margin: 5px;
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+#calendar .calendar-day:hover {
+  background: #4a90e2;
+  color: white;
+}
+
+#calendar .calendar-day.current-day {
+  background: #0055cc;
+  color: white;
+  font-weight: bold;
+}
+
+#motivationalCalendarMessage {
+  margin-top: 10px;
+  font-size: 1.1em;
+  color: #4a90e2;
+  font-style: italic;
+  text-align: center;
+}
+
   </style>
 </head>
 <body>
